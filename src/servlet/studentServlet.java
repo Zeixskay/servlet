@@ -18,6 +18,7 @@ import java.util.List;
 public class studentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
         int start=0;
+
         int total=0;
         int totalNum=0;
         int pageNum=1;
@@ -29,6 +30,7 @@ public class studentServlet extends HttpServlet {
         studentService userService=new studentServiceImpl();
         List<Student> list= null;
         PageUtils pageUtils=new PageUtils(start,5);
+
         try {
              totalNum = pageUtils.getTotalNum();
              total = pageUtils.getTotal();
