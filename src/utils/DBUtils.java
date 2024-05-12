@@ -18,7 +18,7 @@ public class DBUtils {
     static {
         Properties properties =new Properties();
         try {
-            properties.load(new FileInputStream("C:\\Users\\Zeixskay\\Desktop\\源码\\untitled\\src\\db.properties"));
+            properties.load(new FileInputStream("C:\\Users\\Zeixskay\\Desktop\\源码\\servlet\\src\\db.properties"));
             DRIVER=properties.getProperty("driver");
             URL=properties.getProperty("url");
             USER=properties.getProperty("user");

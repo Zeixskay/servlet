@@ -17,7 +17,13 @@ public class studentServiceImpl implements studentService {
     }
 
     @Override
-    public List<Student> listUser() throws SQLException {
-        return  studentDao.listUser();
+    public List<Student> listUser(int start,int count) throws SQLException {
+        return  studentDao.listUser(start,count);
+    }
+
+    @Override
+    public boolean regist(String uname, String upwd) throws SQLException {
+        boolean flag=studentDao.registStudent(uname,upwd);
+        return flag;
     }
 }

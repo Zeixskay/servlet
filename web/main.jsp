@@ -7,6 +7,7 @@
     <title>Title</title>
 </head>
 <body>
+<h2>用户信息</h2>
 <table border="1px" style="background: burlywood">
     <tr>
         <td>行号</td>
@@ -25,7 +26,17 @@
         </tr>
     </c:forEach>
 </table>
-<a>上一页</a>&nbsp;<a>下一页</a>
+
+
+<a <c:if test="${start>1}">
+    href="/login?start=${start-5}&pageNum=${pageNum-1} "
+</c:if>>上一页</a>
+
+&nbsp;<a <c:if test="${start+5<total}">
+    href="/login?start=${start+5}&pageNum=${pageNum+1} "
+</c:if>>下一页</a>
+<br>
+当前共${totalNum}页，共有${total}条数据 当前为第${pageNum}页
 
 </body>
 </html>

@@ -24,10 +24,10 @@ public class aaServlet extends HttpServlet {
         //获取xml配置里面的abc 变量值
         charset= config.getInitParameter("abc");
     }
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws  IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         try {
-            request.setCharacterEncoding(charset);
+            request.setCharacterEncoding("utf-8");
         } catch (UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }
@@ -45,7 +45,7 @@ public class aaServlet extends HttpServlet {
         if(flag){
             response.sendRedirect("/login");
         }else{
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("regist.jsp");
         }
 
 
