@@ -4,11 +4,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>用户信息</title>
 </head>
 <body>
     <h2>用户信息</h2>
-    <table border="1px" style="background: burlywood;width: 510px;height: 310px;text-align: center">
+    <table border="1px" style="background: burlywood;text-align: center">
         <tr style="text-align: center">
             <td>行号</td>
             <td>id</td>
@@ -29,19 +29,25 @@
 
 
     <a <c:if test="${pageNum>1}">
-        href="/login?start=${start-5}&pageNum=${pageNum-1} "
+        href="/student?start=${start-count}&pageNum=${pageNum-1}&count=${count} "
     </c:if>>上一页</a>
 
-    &nbsp;<a <c:if test="${start+5<total}">
-    href="/login?start=${start+5}&pageNum=${pageNum+1}"
+    &nbsp;<a <c:if test="${start+count<total}">
+    href="/student?start=${start+count}&pageNum=${pageNum+1}&count=${count}"
 </c:if>>下一页</a>
     <br>
-    当前为第${pageNum}页，每页显示5条，当前共${totalNum}页，共有${total}条数据
-    <form method="get" action="/login">
-        从第 <input type="text" name="start" style="width: 50px;text-align: center">+1 条数据开始查找，
+    当前为第${pageNum}页，每页显示${count}条，当前共${totalNum}页，共有${total}条数据
+    <form method="get" action="/student">
+        从索引为 <input type="text" name="start" style="width: 50px;text-align: center"> 开始查找，
+        每页展示 <input type="text" name="count" style="width: 50px;text-align: center"> 条,
         结果设置为第 <input type="text" value="1" name="pageNum" readonly size="4" style="width: 20px;text-align: center"> 页
         <input type="submit"  value="GO">
     </form>
+<a href="/student?start=0&pageNum=1&count=5" style="font-size: 14px;text-decoration: none">->回到默认</a>
+
+
+
+
 
 
 </body>

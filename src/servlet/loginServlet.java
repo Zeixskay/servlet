@@ -16,7 +16,7 @@ import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 
 
-public class aaServlet extends HttpServlet {
+public class loginServlet extends HttpServlet {
     //    初始化编码格式
     String charset=null;
     @Override
@@ -43,7 +43,7 @@ public class aaServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         if(flag){
-            response.sendRedirect("/login");
+            response.sendRedirect("/student");
         }else{
             response.sendRedirect("regist.jsp");
         }
